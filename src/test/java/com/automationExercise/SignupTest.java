@@ -1,6 +1,7 @@
 package com.automationExercise;
 
 import com.utulities.TestBase;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -43,9 +44,14 @@ public class SignupTest extends TestBase {
         //Write State to box in ADDRESS INFORMATION section --Kahramanmaras
         driver.findElement(By.id("state")).sendKeys("Kahramanmaras");
         //Write City to box in ADDRESS INFORMATION section -- Kahramanmaras
+        driver.findElement(By.id("city")).sendKeys("Kahramanmaras");
         //Write Zipcode to box in ADDRESS INFORMATION section -  46080
+        driver.findElement(By.id("zipcode")).sendKeys("46080");
         //Write Mobile Number to box in ADDRESS INFORMATION section -- 5451234578
+        driver.findElement(By.id("mobile_number")).sendKeys("5451234578");
         //Click on Create Account button
-        //Confirm  created account
+        driver.findElement(By.xpath("(//button[@type ='submit'])[1]")).click();
+        //Confirm  created account -- We can run this code just one time
+       // Assert.assertTrue(driver.findElement(By.className("title text-center")).getText().equals("ACCOUNT CREATED!"));
     }
 }
