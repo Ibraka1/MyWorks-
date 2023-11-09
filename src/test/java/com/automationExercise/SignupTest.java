@@ -1,18 +1,20 @@
 package com.automationExercise;
 
+import com.utulities.TestBase;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
-public class SignupTest {
+public class SignupTest extends TestBase {
 
-    WebDriver driver;
 
     @Test
-    public void test01() throws Exception {
+    public void test01() {
         //Go to given URL https://www.automationexercise.com/
         driver.get("https://www.automationexercise.com");
         //Click on the Signup/Login button
+        driver.findElement(By.xpath("(//*[. =' Signup / Login'])[2]")).click();
         //Confirm that Login page has opened
         //Write your Name in section New User Signup! -- Ibrahim
         //Write yor Email Address in section New User Signup! --ibraka48@gmail.com
@@ -29,6 +31,5 @@ public class SignupTest {
         //Write Mobile Number to box in ADDRESS INFORMATION section -- 5451234578
         //Click on Create Account button
         //Confirm  created account
-
     }
 }
