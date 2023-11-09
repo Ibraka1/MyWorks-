@@ -4,6 +4,8 @@ import com.utulities.TestBase;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 
 public class SignupTest extends TestBase {
@@ -26,11 +28,20 @@ public class SignupTest extends TestBase {
         //Click on Mr. for Title
         driver.findElement(By.id("id_gender1")).click();
         //Write value to Password section -- Selenium1234
+        driver.findElement(By.id("password")).sendKeys("Selenium1234");
         //Write First name to box in ADDRESS INFORMATION section -- Ibrahim
+        driver.findElement(By.id("first_name")).sendKeys("Ibrahim");
         //"Write Last name to box in ADDRESS INFORMATION section --  Akar
+        driver.findElement(By.id("last_name")).sendKeys("Akar");
         //"Write Address to box in ADDRESS INFORMATION section -- Dulkadiroglu
+        driver.findElement(By.id("address1")).sendKeys("Dulkadiroglu");
         //Select Country from dropdwon menü --Canada
+        WebElement countries = driver.findElement(By.id("country"));
+        Select select = new Select(countries);
+        select.selectByIndex(2); //3rd Country at 2nd index must be Canada
+
         //Write State to box in ADDRESS INFORMATION section --Kahramanmaras
+        driver.findElement(By.id("state")).sendKeys("Kahramanmaras");
         //Write City to box in ADDRESS INFORMATION section -- Kahramanmaras
         //Write Zipcode to box in ADDRESS INFORMATION section -  46080
         //Write Mobile Number to box in ADDRESS INFORMATION section -- 5451234578
