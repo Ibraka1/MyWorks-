@@ -15,11 +15,16 @@ public class SignupTest extends TestBase {
         driver.get("https://www.automationexercise.com");
         //Click on the Signup/Login button
         driver.findElement(By.xpath("(//*[. =' Signup / Login'])[2]")).click();
-        //Confirm that Login page has opened
+        //Confirm that Login page has opened -- opened
+
         //Write your Name in section New User Signup! -- Ibrahim
+        driver.findElement(By.xpath("//input[@type = 'text']")).sendKeys("Ibrahim");
         //Write yor Email Address in section New User Signup! --ibraka48@gmail.com
+        driver.findElement(By.xpath("(//input[@type = 'email'])[2]")).sendKeys("ibraka48@gmail.com");
         //Click on Signup button
+        driver.findElement(By.xpath("(//*[@type = 'submit'])[2]")).click();
         //Click on Mr. for Title
+        driver.findElement(By.id("id_gender1")).click();
         //Write value to Password section -- Selenium1234
         //Write First name to box in ADDRESS INFORMATION section -- Ibrahim
         //"Write Last name to box in ADDRESS INFORMATION section --  Akar
