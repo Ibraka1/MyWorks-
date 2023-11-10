@@ -1,4 +1,6 @@
 package com.automationExercise;
 
-public class LoginTest {
+import com.utulities.TestBase;
+
+public class LoginTest extends TestBase {
 }
